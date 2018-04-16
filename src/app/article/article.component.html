@@ -1,0 +1,62 @@
+
+<div id="divi" class = "ui four wide column center aligned votes" style="background-color: rgb(146, 187, 214);" >
+  <a class="ui large header" href="{{article.link}} ">
+    {{ article.title}}
+    </a>
+    <div class = "meta">
+       {{ article.domain() }}
+      </div>
+    <ul class="ui big horizontal list voters">
+      <li class="item">
+        <a href (click)="voteUp()"></a>
+      </li>
+    </ul>
+  <div class = "ui statistic" style="background-color: rgb(146, 187, 214); color:red;">
+    <div class="value">
+      {{article.votes}}
+    </div>
+    <div class="ui green circular label">
+      Points
+    </div>
+  </div>
+</div>
+<div class="twelve wide column">
+  <!--<a class="ui large header" href="{{ article.link }}" style="background-color:yellow;">
+    {{article.title}}
+  </a>-->
+  <ul class="ui big horizontal list voters">
+    <li class="item">
+      <a href (click)="voteUp()">
+        <i class="arrow up icon"></i>
+        upvote
+      </a>
+    </li>
+    <li class="item">
+      <a href (click)="voteDown()">
+
+          <i class="arrow down icon"></i>
+
+        downvote
+      </a>
+    </li>
+  </ul>
+</div>
+<!--<div>
+  <table class="ui selectable inverted table">
+    <thead>
+      <tr>
+        <th rowspan="2">Name</th>
+        <th rowspan="2">A link</th>
+        <th rowspan="2">Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of article" href (click)="whatsGonnaBe(a)">
+        <td>{{ a.title}}</td>
+        <td>{{ a.link}}</td>
+        <td>{{a.votes}}</td>
+      </tr>
+    </tbody>
+  </table>-->
+
+
