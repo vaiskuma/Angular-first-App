@@ -4,12 +4,14 @@ import {
   HostBinding,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
+  ChangeDetectionStrategy
   } from '@angular/core';
 import { ArticleData } from './article.model';
 
 @Component({
   selector: 'app-articleC',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css'],
   //inputs:['article']
