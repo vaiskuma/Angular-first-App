@@ -5,7 +5,9 @@
     <div>
         <h3> {{ article.domain() }} </h3>
     </div>
-
+    <div>
+        <h3> {{ article.tag }} </h3>
+    </div>
     <div  style="background-color: rgb(146, 187, 214); color:red;">
         <div>
             {{article.votes}}
@@ -42,20 +44,3 @@
         <a href (click)="voteUp()"></a>
     </li>
 </ul>
-<!--<div>
-  <table class="ui selectable inverted table">
-    <thead>
-      <tr>
-        <th rowspan="2">Name</th>
-        <th rowspan="2">A link</th>
-        <th rowspan="2">Votes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let a of article" href (click)="whatsGonnaBe(a)">
-        <td>{{ a.title}}</td>
-        <td>{{ a.link}}</td>
-        <td>{{a.votes}}</td>
-      </tr>
-    </tbody>
-  </table>-->

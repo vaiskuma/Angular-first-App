@@ -3,21 +3,16 @@ import {FormGroup, FormControl} from '@angular/forms';
 export class ArticleData {
   
 
-  //articleDataForm = new FormGroup ({
-   //title: new FormControl (),
-   // link : new FormControl (),
-
-  //});
-
-
   title: string;
+  tag: string;
   link: string;
   votes:number
  
 
 
-  constructor(title: string, link:string, votes?:number) {
-   this.title = title;
+  constructor(title: string,tag:string, link:string,  votes?:number) {
+    this.title = title;
+    this.tag = tag;
     this.link = link;
     this.votes = votes || 0;
   }

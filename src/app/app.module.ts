@@ -22,6 +22,7 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { validateTag } from './create-link/validateTag.validator';
  
 
 
