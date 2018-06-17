@@ -1,46 +1,47 @@
-
-<div id="divi" class = "ui four wide column center aligned votes" style="background-color: rgb(146, 187, 214);" >
-  <a class="ui large header" href="{{article.link}} ">
-    {{ article.title}}
+<div  class="card flex2" >
+    <a href="{{article.link}} ">
+        <h2> {{ article.title}} </h2>
     </a>
-    <div class = "meta">
-       {{ article.domain() }}
-      </div>
-    <ul class="ui big horizontal list voters">
-      <li class="item">
-        <a href (click)="voteUp()"></a>
-      </li>
-    </ul>
-  <div class = "ui statistic" style="background-color: rgb(146, 187, 214); color:red;">
-    <div class="value">
-      {{article.votes}}
+    <div>
+        <h3> {{ article.domain() }} </h3>
     </div>
-    <div class="ui green circular label">
-      Points
+
+    <div  style="background-color: rgb(146, 187, 214); color:red;">
+        <div>
+            {{article.votes}}
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            Points
+        </div>
     </div>
-  </div>
-</div>
-<div class="twelve wide column">
-  <!--<a class="ui large header" href="{{ article.link }}" style="background-color:yellow;">
+
+    <!--<a class="ui large header" href="{{ article.link }}" style="background-color:yellow;">
     {{article.title}}
   </a>-->
-  <ul class="ui big horizontal list voters">
-    <li class="item">
-      <a href (click)="voteUp()">
-        <i class="arrow up icon"></i>
-        upvote
-      </a>
-    </li>
-    <li class="item">
-      <a href (click)="voteDown()">
+    <ul class="ui big horizontal list voters">
+        <li class="item">
+            <a href (click)="voteUp()">
+                <i class="arrow up icon"></i> upvote
+            </a>
+        </li>
+        <li class="item">
+            <a href (click)="voteDown()">
 
-          <i class="arrow down icon"></i>
-
-        downvote
-      </a>
-    </li>
-  </ul>
+                <i class="arrow down icon"></i> downvote
+            </a>
+        </li>
+    </ul>
 </div>
+<ul class="list-group">
+    <li class="item">
+        <a href (click)="voteUp()"></a>
+    </li>
+</ul>
+<ul class="list-group">
+    <li class="item">
+        <a href (click)="voteUp()"></a>
+    </li>
+</ul>
 <!--<div>
   <table class="ui selectable inverted table">
     <thead>
@@ -58,5 +59,3 @@
       </tr>
     </tbody>
   </table>-->
-
-

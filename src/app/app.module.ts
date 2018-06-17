@@ -19,6 +19,11 @@ import { CreateLinkComponent } from './create-link/create-link.component';
 import {ArticleComponent} from './article/article.component';
 import {ArticleData} from './article/article.model';
 import { FormsModule} from '@angular/forms';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+ 
+
 
 
 @NgModule({
@@ -34,14 +39,23 @@ import { FormsModule} from '@angular/forms';
 
   ],
   imports: [
+    HttpClientInMemoryWebApiModule,
+
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
+
+
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireDatabaseModule, 
+ 
+   
+
   ],
+  exports: [RouterModule],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })

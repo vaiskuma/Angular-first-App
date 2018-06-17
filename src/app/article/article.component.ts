@@ -9,6 +9,7 @@ import {
   } from '@angular/core';
 import { ArticleData } from './article.model';
 
+
 @Component({
   selector: 'app-articleC',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,6 +20,7 @@ import { ArticleData } from './article.model';
 
 export class ArticleComponent implements OnInit{
  @HostBinding('attr.class') cssCalss = 'row' ;
+ // @Input is for indication that  Article received ArticleData property
  @Input() article: ArticleData;
 // @Output() onSelectLink = new EventEmitter <ArticleData>();
  //currentLink: ArticleData;

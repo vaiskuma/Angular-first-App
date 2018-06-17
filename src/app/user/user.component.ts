@@ -6,6 +6,9 @@ import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseUserModel } from '../core/user.model';
 import { CreateLinkComponent } from '../create-link/create-link.component';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, AngularFireDatabaseModule} from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-user',
@@ -15,17 +18,25 @@ import { CreateLinkComponent } from '../create-link/create-link.component';
 export class UserComponent implements OnInit{
 
   user: FirebaseUserModel = new FirebaseUserModel();
+  items: AngularFireDatabase;
   profileForm: FormGroup;
+ 
 
   constructor(
     public userService: UserService,
     public authService: AuthService,
     private route: ActivatedRoute,
     private location : Location,
-    private fb: FormBuilder
+    private fb: FormBuilder, 
+    private db: AngularFireDatabase,
+    private afAuth: AngularFireAuth,
+    public af: AngularFireDatabase
   ) {
+    
+    }
+  
 
-  }
+ 
 
   ngOnInit(): void {
     this.route.data.subscribe(routeData => {

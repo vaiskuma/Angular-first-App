@@ -1,34 +1,39 @@
+<div class="containe color-dark">
+        <div class="col">
+            <h2>Add a Link</h2>
+        </div>
+</div>       
+<div class="container color-light">
+            <div class="col">
+    
+            <form [formGroup]="myForm">
+            <label for="title">Title: </label>
+            <!-- using hash to tell Angular to assign those tags to a local variable, and then we can pass them to a function. this markup tells Angular to bind this input to the variable newtitle. New title is now an object that represents this input DOM element.Because newtitle is an object, that means we get the value of the input tag using newtitle.value. -->
+    
+            <input class="txt" type="text" name="title" #newtitle placeholder="Title of your choice" value="{{titleInput}}">
+            <br><span>{{titleInput}} outlook</span>
+     
+        
+    
+        <div class="col">
+            <label for="link">Link:</label>
+            <input class="txt" name="link" #newlink>
+        </div>
+    
+       
+        <button type="submit" (click)="addArticle(newtitle, newlink);newtitle.value='';newlink.value=''" class="btn">
+            Submit link
+        </button>
 
-
-
-
-
-<form class="ui large form segment" style ="background-color: rgb(146, 187, 214);">
-  <h2 class="ui dividing header">Add a Link</h2>
-  <div class="field">
-    <label for="title">Title: </label>
-    <!-- using hash to tell Angular to assign those tags to a local variable, and then we can pass them to a function. this markup tells Angular to bind this input to the variable newtitle. New title is now an object that represents this input DOM element.Because newtitle is an object, that means we get the value of the input tag using newtitle.value. -->
-
-    <input name="title" #newtitle placeholder="Title of your choice" value = "{{titleInput}}">
-    <br><span>{{titleInput}} outlook</span>
-  </div>
-  <div class="field">
-    <label for="link">Link:</label>
-    <input name="link" #newlink>
-  </div>
-  <button (click)="addArticle(newtitle, newlink)"
-    class="ui positive right center floated primary button">
-    Submit link
-
-  </button>
-</form>
-<br>
-
-<div class="ui grid posts">
-<!--<app-articleC [article]="nothing"></app-articleC>-->
-<div *ngFor = "let v of sortedArticles()">
-    <app-articleC [article]="v"></app-articleC>
+       
+   
+    <br>
+    </form>
 </div>
-
-</div>
-
+    <div class="col">
+        <!--<app-articleC [article]="nothing"></app-articleC>-->
+        <div class="life-container" *ngFor="let v of sortedArticles()">
+            <app-articleC [article]="v"></app-articleC>
+        </div>
+    
+    

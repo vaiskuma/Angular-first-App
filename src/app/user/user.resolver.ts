@@ -2,11 +2,23 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, Router } from "@angular/router";
 import { UserService } from '../core/user.service';
 import { FirebaseUserModel } from '../core/user.model';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/switchMap';
+
 
 @Injectable()
 export class UserResolver implements Resolve<FirebaseUserModel> {
 
-  constructor(public userService: UserService, private router: Router) { }
+  user: Observable <FirebaseUserModel>;
+
+  constructor(
+    public userService: UserService,
+    private router: Router, 
+   
+    )
+     { 
+   
+  }
 
   resolve(route: ActivatedRouteSnapshot) : Promise<FirebaseUserModel> {
 
@@ -16,9 +28,11 @@ export class UserResolver implements Resolve<FirebaseUserModel> {
       this.userService.getCurrentUser()
       .then(res => {
         if(res.providerData[0].providerId == 'password'){
+          console.log(res.providerData[0].providerId);
           user.image = 'http://dsi-vd.github.io/patternlab-vd/images/fpo_avatar.png';
           user.name = res.displayName;
           user.provider = res.providerData[0].providerId;
+          console.log(user.provider);
           return resolve(user);
         }
         else{
